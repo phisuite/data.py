@@ -11,8 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
-import common_pb2 as common__pb2
+from . import common_pb2 as common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='data',
   syntax='proto3',
   serialized_options=b'\n\021com.phisuite.dataB\013EntityProtoP\001',
-  serialized_pb=b'\n\x0c\x65ntity.proto\x12\x04\x64\x61ta\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\"\xb1\x01\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12$\n\x04\x64\x61ta\x18\n \x03(\x0b\x32\x16.data.Entity.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32\xa2\x01\n\tEntityAPI\x12%\n\x04List\x12\r.data.Options\x1a\x0c.data.Entity0\x01\x12\"\n\x03Get\x12\r.data.Options\x1a\x0c.data.Entity\x12$\n\x06\x43reate\x12\x0c.data.Entity\x1a\x0c.data.Entity\x12$\n\x06Update\x12\x0c.data.Entity\x1a\x0c.data.EntityB\"\n\x11\x63om.phisuite.dataB\x0b\x45ntityProtoP\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0c\x65ntity.proto\x12\x04\x64\x61ta\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\"\xb1\x01\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12$\n\x04\x64\x61ta\x18\n \x03(\x0b\x32\x16.data.Entity.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32\x97\x01\n\rEntityReadAPI\x12\x41\n\x04List\x12\r.data.Options\x1a\x0c.data.Entity\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/entity/v0/inspect0\x01\x12\x43\n\x03Get\x12\r.data.Options\x1a\x0c.data.Entity\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/entity/v0/inspect/{id}2\x9d\x01\n\x0e\x45ntityWriteAPI\x12\x42\n\x06\x43reate\x12\x0c.data.Entity\x1a\x0c.data.Entity\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/entity/v0/create:\x01*\x12G\n\x06Update\x12\x0c.data.Entity\x1a\x0c.data.Entity\"!\x82\xd3\xe4\x93\x02\x1b\x1a\x16/entity/v0/update/{id}:\x01*B\"\n\x11\x63om.phisuite.dataB\x0b\x45ntityProtoP\x01\x62\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
 
 
 
@@ -60,8 +61,8 @@ _ENTITY_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=241,
+  serialized_start=206,
+  serialized_end=271,
 )
 
 _ENTITY = _descriptor.Descriptor(
@@ -118,8 +119,8 @@ _ENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=64,
-  serialized_end=241,
+  serialized_start=94,
+  serialized_end=271,
 )
 
 _ENTITY_DATAENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
@@ -147,54 +148,69 @@ _sym_db.RegisterMessage(Entity.DataEntry)
 DESCRIPTOR._options = None
 _ENTITY_DATAENTRY._options = None
 
-_ENTITYAPI = _descriptor.ServiceDescriptor(
-  name='EntityAPI',
-  full_name='data.EntityAPI',
+_ENTITYREADAPI = _descriptor.ServiceDescriptor(
+  name='EntityReadAPI',
+  full_name='data.EntityReadAPI',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=244,
-  serialized_end=406,
+  serialized_start=274,
+  serialized_end=425,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
-    full_name='data.EntityAPI.List',
+    full_name='data.EntityReadAPI.List',
     index=0,
     containing_service=None,
     input_type=common__pb2._OPTIONS,
     output_type=_ENTITY,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\024\022\022/entity/v0/inspect',
   ),
   _descriptor.MethodDescriptor(
     name='Get',
-    full_name='data.EntityAPI.Get',
+    full_name='data.EntityReadAPI.Get',
     index=1,
     containing_service=None,
     input_type=common__pb2._OPTIONS,
     output_type=_ENTITY,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\031\022\027/entity/v0/inspect/{id}',
   ),
+])
+_sym_db.RegisterServiceDescriptor(_ENTITYREADAPI)
+
+DESCRIPTOR.services_by_name['EntityReadAPI'] = _ENTITYREADAPI
+
+
+_ENTITYWRITEAPI = _descriptor.ServiceDescriptor(
+  name='EntityWriteAPI',
+  full_name='data.EntityWriteAPI',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=428,
+  serialized_end=585,
+  methods=[
   _descriptor.MethodDescriptor(
     name='Create',
-    full_name='data.EntityAPI.Create',
-    index=2,
+    full_name='data.EntityWriteAPI.Create',
+    index=0,
     containing_service=None,
     input_type=_ENTITY,
     output_type=_ENTITY,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\026\"\021/entity/v0/create:\001*',
   ),
   _descriptor.MethodDescriptor(
     name='Update',
-    full_name='data.EntityAPI.Update',
-    index=3,
+    full_name='data.EntityWriteAPI.Update',
+    index=1,
     containing_service=None,
     input_type=_ENTITY,
     output_type=_ENTITY,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\033\032\026/entity/v0/update/{id}:\001*',
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_ENTITYAPI)
+_sym_db.RegisterServiceDescriptor(_ENTITYWRITEAPI)
 
-DESCRIPTOR.services_by_name['EntityAPI'] = _ENTITYAPI
+DESCRIPTOR.services_by_name['EntityWriteAPI'] = _ENTITYWRITEAPI
 
 # @@protoc_insertion_point(module_scope)

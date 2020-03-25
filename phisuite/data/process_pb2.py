@@ -11,10 +11,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
-import common_pb2 as common__pb2
-import event_pb2 as event__pb2
-import entity_pb2 as entity__pb2
+from . import common_pb2 as common__pb2
+from . import event_pb2 as event__pb2
+from . import entity_pb2 as entity__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,73 +23,36 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='data',
   syntax='proto3',
   serialized_options=b'\n\021com.phisuite.dataB\014ProcessProtoP\001',
-  serialized_pb=b'\n\rprocess.proto\x12\x04\x64\x61ta\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\x1a\x0b\x65vent.proto\x1a\x0c\x65ntity.proto\"\xe1\x02\n\x07Process\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12\x0f\n\x07started\x18\x05 \x01(\t\x12\x11\n\tcompleted\x18\x06 \x01(\t\x12!\n\x02in\x18\n \x01(\x0b\x32\x15.data.Process.Payload\x12\"\n\x03out\x18\x0b \x01(\x0b\x32\x15.data.Process.Payload\x12\"\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x13.data.Process.Error\x1a\x43\n\x07Payload\x12\x1a\n\x05\x65vent\x18\x01 \x01(\x0b\x32\x0b.data.Event\x12\x1c\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x0c.data.Entity\x1a\x42\n\x05\x45rror\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x1a\n\x05\x65vent\x18\x03 \x01(\x0b\x32\x0b.data.Event\"\xaf\x02\n\x0eProcessRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x13\n\x0btransaction\x18\x03 \x01(\t\x12.\n\x05\x65vent\x18\n \x03(\x0b\x32\x1f.data.ProcessRequest.EventEntry\x12\x30\n\x06\x65ntity\x18\x0b \x03(\x0b\x32 .data.ProcessRequest.EntityEntry\x1a\x42\n\nEventEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x1a\x43\n\x0b\x45ntityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\"\x8a\x02\n\x0fProcessResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x05\x65vent\x18\n \x03(\x0b\x32 .data.ProcessResponse.EventEntry\x12\x31\n\x06\x65ntity\x18\x0b \x03(\x0b\x32!.data.ProcessResponse.EntityEntry\x1a\x42\n\nEventEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x1a\x43\n\x0b\x45ntityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32\xee\x01\n\nProcessAPI\x12:\n\x07\x45xecute\x12\x14.data.ProcessRequest\x1a\x15.data.ProcessResponse(\x01\x30\x01\x12&\n\x06Record\x12\r.data.Process\x1a\r.data.Process\x12&\n\x04List\x12\r.data.Options\x1a\r.data.Process0\x01\x12)\n\x07Success\x12\r.data.Options\x1a\r.data.Process0\x01\x12)\n\x07\x46\x61ilure\x12\r.data.Options\x1a\r.data.Process0\x01\x42#\n\x11\x63om.phisuite.dataB\x0cProcessProtoP\x01\x62\x06proto3'
+  serialized_pb=b'\n\rprocess.proto\x12\x04\x64\x61ta\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\x1a\x0b\x65vent.proto\x1a\x0c\x65ntity.proto\"\xb1\x02\n\x07Process\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12,\n\ndefinition\x18\n \x01(\x0b\x32\x18.data.Process.Definition\x1av\n\nDefinition\x12!\n\x05input\x18\x01 \x01(\x0b\x32\x12.data.Process.Data\x12\"\n\x06output\x18\x02 \x01(\x0b\x32\x12.data.Process.Data\x12!\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x12.data.Process.Data\x1a@\n\x04\x44\x61ta\x12\x1a\n\x05\x65vent\x18\x01 \x01(\x0b\x32\x0b.data.Event\x12\x1c\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x0c.data.Entity\"\xff\x01\n\x05Input\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12%\n\x05\x65vent\x18\n \x03(\x0b\x32\x16.data.Input.EventEntry\x12\'\n\x06\x65ntity\x18\x0b \x03(\x0b\x32\x17.data.Input.EntityEntry\x1a\x42\n\nEventEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x1a\x43\n\x0b\x45ntityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\"\xef\x01\n\x06Output\x12\n\n\x02id\x18\x01 \x01(\t\x12&\n\x05\x65vent\x18\n \x03(\x0b\x32\x17.data.Output.EventEntry\x12(\n\x06\x65ntity\x18\x0b \x03(\x0b\x32\x18.data.Output.EntityEntry\x1a\x42\n\nEventEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x1a\x43\n\x0b\x45ntityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32V\n\nProcessAPI\x12H\n\x07\x45xecute\x12\x0b.data.Input\x1a\x0c.data.Output\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/process/v0/execute:\x01*(\x01\x30\x01\x32\xbc\x02\n\x0eProcessReadAPI\x12\x43\n\x04List\x12\r.data.Options\x1a\r.data.Process\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/process/v0/inspect0\x01\x12N\n\x07Success\x12\r.data.Options\x1a\r.data.Process\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/process/v0/inspect/success0\x01\x12N\n\x07\x46\x61ilure\x12\r.data.Options\x1a\r.data.Process\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/process/v0/inspect/failure0\x01\x12\x45\n\x03Get\x12\r.data.Options\x1a\r.data.Process\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/process/v0/inspect/{id}2X\n\x0fProcessWriteAPI\x12\x45\n\x06Record\x12\r.data.Process\x1a\r.data.Process\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/process/v0/record:\x01*B#\n\x11\x63om.phisuite.dataB\x0cProcessProtoP\x01\x62\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,event__pb2.DESCRIPTOR,entity__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,event__pb2.DESCRIPTOR,entity__pb2.DESCRIPTOR,])
 
 
 
 
-_PROCESS_PAYLOAD = _descriptor.Descriptor(
-  name='Payload',
-  full_name='data.Process.Payload',
+_PROCESS_DEFINITION = _descriptor.Descriptor(
+  name='Definition',
+  full_name='data.Process.Definition',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='event', full_name='data.Process.Payload.event', index=0,
+      name='input', full_name='data.Process.Definition.input', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='entity', full_name='data.Process.Payload.entity', index=1,
+      name='output', full_name='data.Process.Definition.output', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=310,
-  serialized_end=377,
-)
-
-_PROCESS_ERROR = _descriptor.Descriptor(
-  name='Error',
-  full_name='data.Process.Error',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='data.Process.Error.code', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='data.Process.Error.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='event', full_name='data.Process.Error.event', index=2,
+      name='error', full_name='data.Process.Definition.error', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -106,8 +70,45 @@ _PROCESS_ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=445,
+  serialized_start=243,
+  serialized_end=361,
+)
+
+_PROCESS_DATA = _descriptor.Descriptor(
+  name='Data',
+  full_name='data.Process.Data',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='event', full_name='data.Process.Data.event', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='entity', full_name='data.Process.Data.entity', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=363,
+  serialized_end=427,
 )
 
 _PROCESS = _descriptor.Descriptor(
@@ -146,36 +147,8 @@ _PROCESS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='started', full_name='data.Process.started', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='completed', full_name='data.Process.completed', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='in', full_name='data.Process.in', index=6,
+      name='definition', full_name='data.Process.definition', index=4,
       number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='out', full_name='data.Process.out', index=7,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='data.Process.error', index=8,
-      number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -183,7 +156,7 @@ _PROCESS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PROCESS_PAYLOAD, _PROCESS_ERROR, ],
+  nested_types=[_PROCESS_DEFINITION, _PROCESS_DATA, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -192,27 +165,27 @@ _PROCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=92,
-  serialized_end=445,
+  serialized_start=122,
+  serialized_end=427,
 )
 
 
-_PROCESSREQUEST_EVENTENTRY = _descriptor.Descriptor(
+_INPUT_EVENTENTRY = _descriptor.Descriptor(
   name='EventEntry',
-  full_name='data.ProcessRequest.EventEntry',
+  full_name='data.Input.EventEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='data.ProcessRequest.EventEntry.key', index=0,
+      name='key', full_name='data.Input.EventEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='data.ProcessRequest.EventEntry.value', index=1,
+      name='value', full_name='data.Input.EventEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -230,26 +203,26 @@ _PROCESSREQUEST_EVENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=616,
-  serialized_end=682,
+  serialized_start=550,
+  serialized_end=616,
 )
 
-_PROCESSREQUEST_ENTITYENTRY = _descriptor.Descriptor(
+_INPUT_ENTITYENTRY = _descriptor.Descriptor(
   name='EntityEntry',
-  full_name='data.ProcessRequest.EntityEntry',
+  full_name='data.Input.EntityEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='data.ProcessRequest.EntityEntry.key', index=0,
+      name='key', full_name='data.Input.EntityEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='data.ProcessRequest.EntityEntry.value', index=1,
+      name='value', full_name='data.Input.EntityEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -267,47 +240,40 @@ _PROCESSREQUEST_ENTITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=751,
+  serialized_start=618,
+  serialized_end=685,
 )
 
-_PROCESSREQUEST = _descriptor.Descriptor(
-  name='ProcessRequest',
-  full_name='data.ProcessRequest',
+_INPUT = _descriptor.Descriptor(
+  name='Input',
+  full_name='data.Input',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='data.ProcessRequest.name', index=0,
+      name='name', full_name='data.Input.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version', full_name='data.ProcessRequest.version', index=1,
+      name='version', full_name='data.Input.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='transaction', full_name='data.ProcessRequest.transaction', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='event', full_name='data.ProcessRequest.event', index=3,
+      name='event', full_name='data.Input.event', index=2,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='entity', full_name='data.ProcessRequest.entity', index=4,
+      name='entity', full_name='data.Input.entity', index=3,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -316,7 +282,7 @@ _PROCESSREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PROCESSREQUEST_EVENTENTRY, _PROCESSREQUEST_ENTITYENTRY, ],
+  nested_types=[_INPUT_EVENTENTRY, _INPUT_ENTITYENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -325,27 +291,27 @@ _PROCESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=448,
-  serialized_end=751,
+  serialized_start=430,
+  serialized_end=685,
 )
 
 
-_PROCESSRESPONSE_EVENTENTRY = _descriptor.Descriptor(
+_OUTPUT_EVENTENTRY = _descriptor.Descriptor(
   name='EventEntry',
-  full_name='data.ProcessResponse.EventEntry',
+  full_name='data.Output.EventEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='data.ProcessResponse.EventEntry.key', index=0,
+      name='key', full_name='data.Output.EventEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='data.ProcessResponse.EventEntry.value', index=1,
+      name='value', full_name='data.Output.EventEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -363,26 +329,26 @@ _PROCESSRESPONSE_EVENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=616,
-  serialized_end=682,
+  serialized_start=550,
+  serialized_end=616,
 )
 
-_PROCESSRESPONSE_ENTITYENTRY = _descriptor.Descriptor(
+_OUTPUT_ENTITYENTRY = _descriptor.Descriptor(
   name='EntityEntry',
-  full_name='data.ProcessResponse.EntityEntry',
+  full_name='data.Output.EntityEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='data.ProcessResponse.EntityEntry.key', index=0,
+      name='key', full_name='data.Output.EntityEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='data.ProcessResponse.EntityEntry.value', index=1,
+      name='value', full_name='data.Output.EntityEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -400,33 +366,33 @@ _PROCESSRESPONSE_ENTITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=751,
+  serialized_start=618,
+  serialized_end=685,
 )
 
-_PROCESSRESPONSE = _descriptor.Descriptor(
-  name='ProcessResponse',
-  full_name='data.ProcessResponse',
+_OUTPUT = _descriptor.Descriptor(
+  name='Output',
+  full_name='data.Output',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='data.ProcessResponse.id', index=0,
+      name='id', full_name='data.Output.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='event', full_name='data.ProcessResponse.event', index=1,
+      name='event', full_name='data.Output.event', index=1,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='entity', full_name='data.ProcessResponse.entity', index=2,
+      name='entity', full_name='data.Output.entity', index=2,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -435,7 +401,7 @@ _PROCESSRESPONSE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PROCESSRESPONSE_EVENTENTRY, _PROCESSRESPONSE_ENTITYENTRY, ],
+  nested_types=[_OUTPUT_EVENTENTRY, _OUTPUT_ENTITYENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -444,48 +410,48 @@ _PROCESSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=754,
-  serialized_end=1020,
+  serialized_start=688,
+  serialized_end=927,
 )
 
-_PROCESS_PAYLOAD.fields_by_name['event'].message_type = event__pb2._EVENT
-_PROCESS_PAYLOAD.fields_by_name['entity'].message_type = entity__pb2._ENTITY
-_PROCESS_PAYLOAD.containing_type = _PROCESS
-_PROCESS_ERROR.fields_by_name['event'].message_type = event__pb2._EVENT
-_PROCESS_ERROR.containing_type = _PROCESS
-_PROCESS.fields_by_name['in'].message_type = _PROCESS_PAYLOAD
-_PROCESS.fields_by_name['out'].message_type = _PROCESS_PAYLOAD
-_PROCESS.fields_by_name['error'].message_type = _PROCESS_ERROR
-_PROCESSREQUEST_EVENTENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_PROCESSREQUEST_EVENTENTRY.containing_type = _PROCESSREQUEST
-_PROCESSREQUEST_ENTITYENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_PROCESSREQUEST_ENTITYENTRY.containing_type = _PROCESSREQUEST
-_PROCESSREQUEST.fields_by_name['event'].message_type = _PROCESSREQUEST_EVENTENTRY
-_PROCESSREQUEST.fields_by_name['entity'].message_type = _PROCESSREQUEST_ENTITYENTRY
-_PROCESSRESPONSE_EVENTENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_PROCESSRESPONSE_EVENTENTRY.containing_type = _PROCESSRESPONSE
-_PROCESSRESPONSE_ENTITYENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_PROCESSRESPONSE_ENTITYENTRY.containing_type = _PROCESSRESPONSE
-_PROCESSRESPONSE.fields_by_name['event'].message_type = _PROCESSRESPONSE_EVENTENTRY
-_PROCESSRESPONSE.fields_by_name['entity'].message_type = _PROCESSRESPONSE_ENTITYENTRY
+_PROCESS_DEFINITION.fields_by_name['input'].message_type = _PROCESS_DATA
+_PROCESS_DEFINITION.fields_by_name['output'].message_type = _PROCESS_DATA
+_PROCESS_DEFINITION.fields_by_name['error'].message_type = _PROCESS_DATA
+_PROCESS_DEFINITION.containing_type = _PROCESS
+_PROCESS_DATA.fields_by_name['event'].message_type = event__pb2._EVENT
+_PROCESS_DATA.fields_by_name['entity'].message_type = entity__pb2._ENTITY
+_PROCESS_DATA.containing_type = _PROCESS
+_PROCESS.fields_by_name['definition'].message_type = _PROCESS_DEFINITION
+_INPUT_EVENTENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_INPUT_EVENTENTRY.containing_type = _INPUT
+_INPUT_ENTITYENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_INPUT_ENTITYENTRY.containing_type = _INPUT
+_INPUT.fields_by_name['event'].message_type = _INPUT_EVENTENTRY
+_INPUT.fields_by_name['entity'].message_type = _INPUT_ENTITYENTRY
+_OUTPUT_EVENTENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_OUTPUT_EVENTENTRY.containing_type = _OUTPUT
+_OUTPUT_ENTITYENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_OUTPUT_ENTITYENTRY.containing_type = _OUTPUT
+_OUTPUT.fields_by_name['event'].message_type = _OUTPUT_EVENTENTRY
+_OUTPUT.fields_by_name['entity'].message_type = _OUTPUT_ENTITYENTRY
 DESCRIPTOR.message_types_by_name['Process'] = _PROCESS
-DESCRIPTOR.message_types_by_name['ProcessRequest'] = _PROCESSREQUEST
-DESCRIPTOR.message_types_by_name['ProcessResponse'] = _PROCESSRESPONSE
+DESCRIPTOR.message_types_by_name['Input'] = _INPUT
+DESCRIPTOR.message_types_by_name['Output'] = _OUTPUT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Process = _reflection.GeneratedProtocolMessageType('Process', (_message.Message,), {
 
-  'Payload' : _reflection.GeneratedProtocolMessageType('Payload', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESS_PAYLOAD,
+  'Definition' : _reflection.GeneratedProtocolMessageType('Definition', (_message.Message,), {
+    'DESCRIPTOR' : _PROCESS_DEFINITION,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.Process.Payload)
+    # @@protoc_insertion_point(class_scope:data.Process.Definition)
     })
   ,
 
-  'Error' : _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESS_ERROR,
+  'Data' : _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), {
+    'DESCRIPTOR' : _PROCESS_DATA,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.Process.Error)
+    # @@protoc_insertion_point(class_scope:data.Process.Data)
     })
   ,
   'DESCRIPTOR' : _PROCESS,
@@ -493,61 +459,61 @@ Process = _reflection.GeneratedProtocolMessageType('Process', (_message.Message,
   # @@protoc_insertion_point(class_scope:data.Process)
   })
 _sym_db.RegisterMessage(Process)
-_sym_db.RegisterMessage(Process.Payload)
-_sym_db.RegisterMessage(Process.Error)
+_sym_db.RegisterMessage(Process.Definition)
+_sym_db.RegisterMessage(Process.Data)
 
-ProcessRequest = _reflection.GeneratedProtocolMessageType('ProcessRequest', (_message.Message,), {
+Input = _reflection.GeneratedProtocolMessageType('Input', (_message.Message,), {
 
   'EventEntry' : _reflection.GeneratedProtocolMessageType('EventEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESSREQUEST_EVENTENTRY,
+    'DESCRIPTOR' : _INPUT_EVENTENTRY,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.ProcessRequest.EventEntry)
+    # @@protoc_insertion_point(class_scope:data.Input.EventEntry)
     })
   ,
 
   'EntityEntry' : _reflection.GeneratedProtocolMessageType('EntityEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESSREQUEST_ENTITYENTRY,
+    'DESCRIPTOR' : _INPUT_ENTITYENTRY,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.ProcessRequest.EntityEntry)
+    # @@protoc_insertion_point(class_scope:data.Input.EntityEntry)
     })
   ,
-  'DESCRIPTOR' : _PROCESSREQUEST,
+  'DESCRIPTOR' : _INPUT,
   '__module__' : 'process_pb2'
-  # @@protoc_insertion_point(class_scope:data.ProcessRequest)
+  # @@protoc_insertion_point(class_scope:data.Input)
   })
-_sym_db.RegisterMessage(ProcessRequest)
-_sym_db.RegisterMessage(ProcessRequest.EventEntry)
-_sym_db.RegisterMessage(ProcessRequest.EntityEntry)
+_sym_db.RegisterMessage(Input)
+_sym_db.RegisterMessage(Input.EventEntry)
+_sym_db.RegisterMessage(Input.EntityEntry)
 
-ProcessResponse = _reflection.GeneratedProtocolMessageType('ProcessResponse', (_message.Message,), {
+Output = _reflection.GeneratedProtocolMessageType('Output', (_message.Message,), {
 
   'EventEntry' : _reflection.GeneratedProtocolMessageType('EventEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESSRESPONSE_EVENTENTRY,
+    'DESCRIPTOR' : _OUTPUT_EVENTENTRY,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.ProcessResponse.EventEntry)
+    # @@protoc_insertion_point(class_scope:data.Output.EventEntry)
     })
   ,
 
   'EntityEntry' : _reflection.GeneratedProtocolMessageType('EntityEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PROCESSRESPONSE_ENTITYENTRY,
+    'DESCRIPTOR' : _OUTPUT_ENTITYENTRY,
     '__module__' : 'process_pb2'
-    # @@protoc_insertion_point(class_scope:data.ProcessResponse.EntityEntry)
+    # @@protoc_insertion_point(class_scope:data.Output.EntityEntry)
     })
   ,
-  'DESCRIPTOR' : _PROCESSRESPONSE,
+  'DESCRIPTOR' : _OUTPUT,
   '__module__' : 'process_pb2'
-  # @@protoc_insertion_point(class_scope:data.ProcessResponse)
+  # @@protoc_insertion_point(class_scope:data.Output)
   })
-_sym_db.RegisterMessage(ProcessResponse)
-_sym_db.RegisterMessage(ProcessResponse.EventEntry)
-_sym_db.RegisterMessage(ProcessResponse.EntityEntry)
+_sym_db.RegisterMessage(Output)
+_sym_db.RegisterMessage(Output.EventEntry)
+_sym_db.RegisterMessage(Output.EntityEntry)
 
 
 DESCRIPTOR._options = None
-_PROCESSREQUEST_EVENTENTRY._options = None
-_PROCESSREQUEST_ENTITYENTRY._options = None
-_PROCESSRESPONSE_EVENTENTRY._options = None
-_PROCESSRESPONSE_ENTITYENTRY._options = None
+_INPUT_EVENTENTRY._options = None
+_INPUT_ENTITYENTRY._options = None
+_OUTPUT_EVENTENTRY._options = None
+_OUTPUT_ENTITYENTRY._options = None
 
 _PROCESSAPI = _descriptor.ServiceDescriptor(
   name='ProcessAPI',
@@ -555,57 +521,96 @@ _PROCESSAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1023,
-  serialized_end=1261,
+  serialized_start=929,
+  serialized_end=1015,
   methods=[
   _descriptor.MethodDescriptor(
     name='Execute',
     full_name='data.ProcessAPI.Execute',
     index=0,
     containing_service=None,
-    input_type=_PROCESSREQUEST,
-    output_type=_PROCESSRESPONSE,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Record',
-    full_name='data.ProcessAPI.Record',
-    index=1,
-    containing_service=None,
-    input_type=_PROCESS,
-    output_type=_PROCESS,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='data.ProcessAPI.List',
-    index=2,
-    containing_service=None,
-    input_type=common__pb2._OPTIONS,
-    output_type=_PROCESS,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Success',
-    full_name='data.ProcessAPI.Success',
-    index=3,
-    containing_service=None,
-    input_type=common__pb2._OPTIONS,
-    output_type=_PROCESS,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Failure',
-    full_name='data.ProcessAPI.Failure',
-    index=4,
-    containing_service=None,
-    input_type=common__pb2._OPTIONS,
-    output_type=_PROCESS,
-    serialized_options=None,
+    input_type=_INPUT,
+    output_type=_OUTPUT,
+    serialized_options=b'\202\323\344\223\002\030\"\023/process/v0/execute:\001*',
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_PROCESSAPI)
 
 DESCRIPTOR.services_by_name['ProcessAPI'] = _PROCESSAPI
+
+
+_PROCESSREADAPI = _descriptor.ServiceDescriptor(
+  name='ProcessReadAPI',
+  full_name='data.ProcessReadAPI',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=1018,
+  serialized_end=1334,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='data.ProcessReadAPI.List',
+    index=0,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_PROCESS,
+    serialized_options=b'\202\323\344\223\002\025\022\023/process/v0/inspect',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Success',
+    full_name='data.ProcessReadAPI.Success',
+    index=1,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_PROCESS,
+    serialized_options=b'\202\323\344\223\002\035\022\033/process/v0/inspect/success',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Failure',
+    full_name='data.ProcessReadAPI.Failure',
+    index=2,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_PROCESS,
+    serialized_options=b'\202\323\344\223\002\035\022\033/process/v0/inspect/failure',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Get',
+    full_name='data.ProcessReadAPI.Get',
+    index=3,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_PROCESS,
+    serialized_options=b'\202\323\344\223\002\032\022\030/process/v0/inspect/{id}',
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_PROCESSREADAPI)
+
+DESCRIPTOR.services_by_name['ProcessReadAPI'] = _PROCESSREADAPI
+
+
+_PROCESSWRITEAPI = _descriptor.ServiceDescriptor(
+  name='ProcessWriteAPI',
+  full_name='data.ProcessWriteAPI',
+  file=DESCRIPTOR,
+  index=2,
+  serialized_options=None,
+  serialized_start=1336,
+  serialized_end=1424,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Record',
+    full_name='data.ProcessWriteAPI.Record',
+    index=0,
+    containing_service=None,
+    input_type=_PROCESS,
+    output_type=_PROCESS,
+    serialized_options=b'\202\323\344\223\002\027\"\022/process/v0/record:\001*',
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_PROCESSWRITEAPI)
+
+DESCRIPTOR.services_by_name['ProcessWriteAPI'] = _PROCESSWRITEAPI
 
 # @@protoc_insertion_point(module_scope)

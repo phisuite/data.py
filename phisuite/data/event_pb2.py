@@ -11,8 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
-import common_pb2 as common__pb2
+from . import common_pb2 as common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='data',
   syntax='proto3',
   serialized_options=b'\n\021com.phisuite.dataB\nEventProtoP\001',
-  serialized_pb=b'\n\x0b\x65vent.proto\x12\x04\x64\x61ta\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\"\xb8\x01\n\x05\x45vent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12)\n\x07payload\x18\n \x03(\x0b\x32\x18.data.Event.PayloadEntry\x1a\x44\n\x0cPayloadEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32x\n\x08\x45ventAPI\x12#\n\x07Publish\x12\x0b.data.Event\x1a\x0b.data.Event\x12$\n\x04List\x12\r.data.Options\x1a\x0b.data.Event0\x01\x12!\n\x03Get\x12\r.data.Options\x1a\x0b.data.EventB!\n\x11\x63om.phisuite.dataB\nEventProtoP\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0b\x65vent.proto\x12\x04\x64\x61ta\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/protobuf/any.proto\x1a\x0c\x63ommon.proto\"\xb8\x01\n\x05\x45vent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x13\n\x0btransaction\x18\x04 \x01(\t\x12)\n\x07payload\x18\n \x03(\x0b\x32\x18.data.Event.PayloadEntry\x1a\x44\n\x0cPayloadEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32M\n\x08\x45ventAPI\x12\x41\n\x07Publish\x12\x0b.data.Event\x1a\x0b.data.Event\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/event/v0/publish:\x01*2\x92\x01\n\x0c\x45ventReadAPI\x12?\n\x04List\x12\r.data.Options\x1a\x0b.data.Event\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/event/v0/inspect0\x01\x12\x41\n\x03Get\x12\r.data.Options\x1a\x0b.data.Event\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/event/v0/inspect/{id}2P\n\rEventWriteAPI\x12?\n\x06Record\x12\x0b.data.Event\x1a\x0b.data.Event\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/event/v0/record:\x01*B!\n\x11\x63om.phisuite.dataB\nEventProtoP\x01\x62\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
 
 
 
@@ -60,8 +61,8 @@ _EVENT_PAYLOADENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=179,
-  serialized_end=247,
+  serialized_start=209,
+  serialized_end=277,
 )
 
 _EVENT = _descriptor.Descriptor(
@@ -118,8 +119,8 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=63,
-  serialized_end=247,
+  serialized_start=93,
+  serialized_end=277,
 )
 
 _EVENT_PAYLOADENTRY.fields_by_name['value'].message_type = google_dot_protobuf_dot_any__pb2._ANY
@@ -153,8 +154,8 @@ _EVENTAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=249,
-  serialized_end=369,
+  serialized_start=279,
+  serialized_end=356,
   methods=[
   _descriptor.MethodDescriptor(
     name='Publish',
@@ -163,29 +164,68 @@ _EVENTAPI = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_EVENT,
     output_type=_EVENT,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='data.EventAPI.List',
-    index=1,
-    containing_service=None,
-    input_type=common__pb2._OPTIONS,
-    output_type=_EVENT,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='data.EventAPI.Get',
-    index=2,
-    containing_service=None,
-    input_type=common__pb2._OPTIONS,
-    output_type=_EVENT,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\026\"\021/event/v0/publish:\001*',
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_EVENTAPI)
 
 DESCRIPTOR.services_by_name['EventAPI'] = _EVENTAPI
+
+
+_EVENTREADAPI = _descriptor.ServiceDescriptor(
+  name='EventReadAPI',
+  full_name='data.EventReadAPI',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=359,
+  serialized_end=505,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='data.EventReadAPI.List',
+    index=0,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_EVENT,
+    serialized_options=b'\202\323\344\223\002\023\022\021/event/v0/inspect',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Get',
+    full_name='data.EventReadAPI.Get',
+    index=1,
+    containing_service=None,
+    input_type=common__pb2._OPTIONS,
+    output_type=_EVENT,
+    serialized_options=b'\202\323\344\223\002\030\022\026/event/v0/inspect/{id}',
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_EVENTREADAPI)
+
+DESCRIPTOR.services_by_name['EventReadAPI'] = _EVENTREADAPI
+
+
+_EVENTWRITEAPI = _descriptor.ServiceDescriptor(
+  name='EventWriteAPI',
+  full_name='data.EventWriteAPI',
+  file=DESCRIPTOR,
+  index=2,
+  serialized_options=None,
+  serialized_start=507,
+  serialized_end=587,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Record',
+    full_name='data.EventWriteAPI.Record',
+    index=0,
+    containing_service=None,
+    input_type=_EVENT,
+    output_type=_EVENT,
+    serialized_options=b'\202\323\344\223\002\025\"\020/event/v0/record:\001*',
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_EVENTWRITEAPI)
+
+DESCRIPTOR.services_by_name['EventWriteAPI'] = _EVENTWRITEAPI
 
 # @@protoc_insertion_point(module_scope)
